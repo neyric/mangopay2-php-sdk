@@ -237,6 +237,10 @@ abstract class ApiBase
             $requestData = $this->BuildRequestData($entity);
         }
 
+        if (is_null($requestData) && $responseClassName == '\MangoPay\UboDeclaration') {
+            $requestData = "";
+        }
+
         $rest = new RestTool(true, $this->_root);
         $response = $rest->Request($urlMethod, $this->GetRequestType($methodKey), $requestData, $idempotencyKey);
 
