@@ -768,6 +768,7 @@ abstract class Base extends TestCase
             $user->LegalRepresentativeBirthday = $john->Birthday;
             $user->LegalRepresentativeNationality = $john->Nationality;
             $user->LegalRepresentativeCountryOfResidence = $john->CountryOfResidence;
+            $user->CompanyNumber = "LU123456";
             self::$Matrix = $this->_api->Users->Create($user);
         }
         return self::$Matrix;
